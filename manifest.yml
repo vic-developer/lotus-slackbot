@@ -1,0 +1,37 @@
+// slack bot App Manifest
+
+display_information:
+  name: Mr. Turtle
+features:
+  bot_user:
+    display_name: Mr. Turtle
+    always_online: false
+  slash_commands:
+    - command: /give
+      url: https://9123-178-42-43-60.ngrok.io/slack/events
+      description: gives lotus to given user
+      usage_hint: 100 @username
+      should_escape: false
+oauth_config:
+  scopes:
+    bot:
+      - app_mentions:read
+      - chat:write
+      - commands
+      - im:write
+      - incoming-webhook
+      - reactions:write
+      - im:read
+      - im:history
+settings:
+  event_subscriptions:
+    request_url: https://9123-178-42-43-60.ngrok.io/slack/events
+    bot_events:
+      - app_mention
+      - message.im
+  interactivity:
+    is_enabled: true
+    request_url: https://9123-178-42-43-60.ngrok.io/slack/events
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false
